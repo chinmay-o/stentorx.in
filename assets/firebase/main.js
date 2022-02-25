@@ -29,7 +29,7 @@ function signOut() {
       console.log("Running");
       if (logoutRecorded) {
 
-        window.location.href = "/sign-in.html"
+        window.location.href = "/index.html"
       }
     }, 100);
 
@@ -72,7 +72,7 @@ function profileDisplay() {
 
       $(".profile-pic").attr("src", snapshot.val().profile.toString());
       for (var i = 0; i < document.getElementsByClassName("user-profile-name").length; i++) {
-        
+
         document.getElementsByClassName("user-profile-name")[i].innerHTML = snapshot.val().user.toString();
       }
     });
