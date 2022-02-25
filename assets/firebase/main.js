@@ -13,7 +13,6 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-var logoutRecorded = false;
 firebase.auth();
 
 function signOut() {
@@ -24,15 +23,6 @@ function signOut() {
 
     markLogout(loggedUser.uid);
     console.log(loggedUser.uid);
-    setInterval(function() {
-
-      console.log("Running");
-      if (logoutRecorded) {
-
-        window.location.href = window.location.pathname.split("/")[1];
-      }
-    }, 100);
-
   }).catch((error) => {
 
     console.log('Signing Out Failed')
@@ -52,7 +42,7 @@ function markLogout(uniqueID) {
     .then(function() {
 
       console.log('Logout Recorded');
-      logoutRecorded = true;
+      window.location.href = "/index.html";
     })
     .catch(function(error) {
 

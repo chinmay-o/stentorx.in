@@ -1,6 +1,4 @@
 
-var loginRecorded = false;
-
 document.getElementById('signin_form').addEventListener('submit', submitForm);
 
 function submitForm(e) {
@@ -17,16 +15,6 @@ function submitForm(e) {
       var user = userCredential.user;
       markLogin(user.uid);
       console.log('Signed In');
-      setInterval(function() {
-
-        console.log("Running");
-        console.log(loginRecorded);
-        if (loginRecorded) {
-
-          console.log("-" + loginRecorded);
-          window.location.href = window.location.pathname.split("/")[1] + "/admin"
-        }
-      }, 100);
     })
     .catch((error) => {
 
@@ -48,7 +36,7 @@ function markLogin(uniqueID) {
     .then(function() {
 
       console.log('Login Recorded');
-      loginRecorded = true;
+      window.location.href = window.location.pathname.split("/")[1] + "/admin"
     })
     .catch(function(error) {
 
