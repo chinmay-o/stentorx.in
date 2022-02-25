@@ -24,7 +24,7 @@ function submitForm(e) {
         if (loginRecorded) {
 
           console.log("-" + loginRecorded);
-          window.location.href = "/admin.html"
+          window.location.href = window.location.pathname.split("/")[1] + "/admin"
         }
       }, 100);
     })

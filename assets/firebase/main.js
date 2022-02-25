@@ -29,7 +29,7 @@ function signOut() {
       console.log("Running");
       if (logoutRecorded) {
 
-        window.location.href = "/index.html"
+        window.location.href = window.location.pathname.split("/")[1];
       }
     }, 100);
 
@@ -74,6 +74,11 @@ function profileDisplay() {
       for (var i = 0; i < document.getElementsByClassName("user-profile-name").length; i++) {
 
         document.getElementsByClassName("user-profile-name")[i].innerHTML = snapshot.val().user.toString();
+      }
+
+      for (var j = 0; j < document.getElementsByClassName("user-profile-email").length; j++) {
+
+        document.getElementsByClassName("user-profile-email")[j].innerHTML = snapshot.val().username.toString();
       }
     });
     clearInterval(profileLoad);
